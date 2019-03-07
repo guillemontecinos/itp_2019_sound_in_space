@@ -31,7 +31,7 @@ const bass = new Tone.Synth({
 // mid wynth plays mid-range notes
 const mid = new Tone.Synth({
   oscillator  : {
-    type  : "sine"
+    type  : "sine2"
   }  ,
     envelope  : {
     attack  : 0.3 ,
@@ -47,12 +47,12 @@ const mid = new Tone.Synth({
 // impulse response borrowed from Yotam's lib
 const convolver = new Tone.Convolver("./matrix-reverb1.wav").connect(gainPolyNode)
 
-const eqPoly = new Tone.EQ3(0,1,-2).connect(convolver)
+const eqPoly = new Tone.EQ3(0,1,-3).connect(convolver)
 
 const poly = new Tone.PolySynth(7, Tone.Synth).connect(eqPoly)
 poly.set({
 	"oscillator" : {
-		"type" : "sawtooth"
+		"type" : "square"
 	},
   envelope  : {
     attack  : 0.01 ,
