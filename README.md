@@ -17,3 +17,9 @@ My first approach to that was to bring one speaker to the room, place it in a sp
   * other rack vibration at **140 hz**
   * other rack vibration at **155 hz**
   * over **150 hz** it gets annoying
+
+Besides of playing just pure tones I played around with phase shifting and harmonic content manipulation, in order to add more information to the sound but limiting the amount of energy used to excite the space. For that I coded a Max patch in which a pure tone was added to the resultant of a phase shifting applied on itself. I liked the idea of using Max, but afterwards I took the chance to learn Tone during this class.
+
+<p align="center">
+  <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/01_monophonic/documentation/mono_maxpat.png" align="middle" width="70%">
+</p>
