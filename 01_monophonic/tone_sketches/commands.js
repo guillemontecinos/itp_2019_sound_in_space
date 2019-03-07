@@ -38,6 +38,9 @@ for(var i = 0; i < 16; i++){
 	seqPoly.at(i,nota)
 }
 
+// must change 5*Math.random() -> 10*Math.random()
+highNotes = [146, 186, 230, 280, 310, 292, 372, 460, 560, 610]
+
 // =======================
 // TURN OFF ALL SEQUENCERS
 // =======================
