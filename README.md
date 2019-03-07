@@ -1,6 +1,7 @@
 # Sound in Space Blog
 
 ## Monophonic
+### Previous experiments
 The challenge of composing a monophonic piece for a class called *Sound in Space* brought me the question that regarding sound spatial perception is calculated by our brain measuring the difference in time our ears capture sound, *how can I spatialize with only one sound channel?* To afford that I thought that I can make audience feel that sound is spatialized by taking advantage of the physical characteristics of the site where the piece was to be played. So it brought me to the idea of a site-specific piece.
 
 <p align="center">
@@ -23,3 +24,6 @@ Besides of playing just pure tones I played around with phase shifting and harmo
 <p align="center">
   <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/01_monophonic/documentation/mono_maxpat.png" align="middle" width="70%">
 </p>
+
+### Final version
+Tone was totally new for me, so I had to start from scratch. In order to make this as minimal as possible I decided to play around with mono and poly synths triggered from sequencers. The final version of the piece consists in 3 synths, one for low freqs, one for mid freqs and one for highg freqs. These notes are part of a scale I built from the resonant frequencies I found during the tuning process, which were copied one octave up in order to add more variety of sounds.
