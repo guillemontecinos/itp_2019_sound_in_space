@@ -22,4 +22,30 @@
 * Nyquist </3 sample rate
 * 128 samples is minimum buffer size
 * `forEach` is a for loop for arrays
+
+## Week 3
+* [Twelve-tone music](https://en.wikipedia.org/wiki/Twelve-tone_technique)
+* [Voice Piece for Soprano - Yoko Ono](https://en.wikipedia.org/wiki/Voice_Piece_for_Soprano)
+* [Artikulation - Ligeti](https://en.wikipedia.org/wiki/Artikulation_(Ligeti))
+* [MUSIC-N language](https://en.wikipedia.org/wiki/MUSIC-N)
+* [Tidal Cycles](https://tidalcycles.org/index.php/Welcome)
+* [Spectromorphology: explaining sound-shapes](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S1355771897009059)
+* [Cornelius Cardew](https://en.wikipedia.org/wiki/Cornelius_Cardew)
+  * [Smash the social contract](https://www.youtube.com/watch?v=wnauDrzdOiQ)
+  * [Treatise](https://www.youtube.com/watch?v=JMzIXxlwuCs)
+* [Cut up technique - David Bowie](https://www.youtube.com/watch?v=m1InCrzGIPU)
+* [John Cage](https://en.wikipedia.org/wiki/John_Cage)
+  * [4'33" - John Cage](https://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3)
+* [I'm sitting in a Room - Alvin Lucier](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
+* [Low-Frequency Oscillator - LFO](https://en.wikipedia.org/wiki/Low-frequency_oscillation)
+* [Head-related transfer function - HRTF](https://en.wikipedia.org/wiki/Head-related_transfer_function)
+* [Kevin Beasley](https://en.wikipedia.org/wiki/Kevin_Beasley)
+
+### Synthesis
+* [Mechanical Fourier](https://www.youtube.com/watch?v=8KmVDxkia_w)
+* 
+
+### Stereo Assignment
+* think music in a different level of abstraction
+* Write a score that explicits trajectories in space
 *
