@@ -1,18 +1,24 @@
 // by Guillermo Montecinos
 // Stereo Assignment, for Sound in Space class, NYU ITP, Spring 2019
+// in this sketch I built my own panner
 
 const noiseGain = .3
 let panX = 0
 
-// Panner
-const panner = new Tone.Panner([initialPan = 0]).toMaster()
+// Merge
+const merge = new Tone.Merge().toMaster()
 
 // Gain
-const gainNode = new Tone.Gain().connect(panner) //to control bass gain
-gainNode.gain.value = noiseGain
+const gLeft = new Tone.Gain().connect(merge.left)
+const gRight = new Tone.Gain().connect(merge.right)
+
+// split
+const split = new Tone.Split()
+split.connect(gLeft, 0, 0)
+split.connect(gRight, 1, 0)
 
 // Noise noiseSource
-const noiseSource = new Tone.Noise('white').connect(gainNode).start()
+const noiseSource = new Tone.Noise('white').connect(split).start()
 
 let now = Tone.now()
 
@@ -42,13 +48,14 @@ function draw(){
   noStroke()
   fill(255)
   ellipse(mouseX, height/2, 50, 50)
-  panX = map(mouseX, 0, width, -1, 1)
-  if(panX < -1){
-    panX = -1
+  panX = map(mouseX, 0, width, 0, 1)
+  if(panX < 0){
+    panX = 0
   }
   else if (panX > 1) {
     panX = 1
   }
   // console.log(panX)
-  panner.pan.value = panX
+  gLeft.gain.value = noiseGain * Math.sqrt(1 - panX)
+  gRight.gain.value = noiseGain * Math.sqrt(panX)
 }
