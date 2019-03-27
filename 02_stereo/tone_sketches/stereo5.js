@@ -53,48 +53,39 @@ const noiseSource = new Tone.Noise('white').connect(preSplit).start()
 let now = Tone.now()
 
 // trigger silence ASR pulse
-function gASR(startTime, attack, sustain, release){
-  const t1 = startTime + attack
+function gASR(attack, sustain, release){
+  const t1 = attack
   const t2 = t1 + sustain
   const t3 = t2 + release
-  gSilence.gain.setValueAtTime(1, "+" + startTime)
+  gSilence.gain.setValueAtTime(1)
   gSilence.gain.linearRampToValueAtTime(0, "+" + t1)
   gSilence.gain.setValueAtTime(0, "+" + t2)
   gSilence.gain.linearRampToValueAtTime(1, "+" + t3)
 }
 
-// time schedule
-// gASR(5,.1,.3,.1)
-// gASR(6,.1,.3,.1)
-// gASR(7,.1,1,.1)
-// gASR(8.5,.1,.3,.1)
-
-// p5.js part for panning. will be deleted
-
-function setup(){
-  createCanvas(800,200)
-}
-
-function draw(){
-  background(200)
-  noStroke()
-  fill(255)
-  ellipse(mouseX, height/2, 50, 50)
-  panX = map(mouseX, 0, width, 0, 1)
-  if(panX < 0){
-    panX = 0
-  }
-  else if (panX > 1) {
-    panX = 1
-  }
-  // console.log(panX)
-  // TODO: connect panning to gains
+// panning
+function panning(panX){
   gSilenceL.gain.value = Math.sqrt(1 - panX)/2
   gNoiseL.gain.value = Math.sqrt(panX)/2
   gSilenceR.gain.value = Math.sqrt(panX)/2
   gNoiseR.gain.value = Math.sqrt(1 - panX)/2
 }
 
-function mouseClicked(){
-  gASR(0,.1,.3,.1)
-}
+// notes scheduling
+Tone.Transport.schedule(function(time){
+  panning(0)
+  gASR(.001, .1, .001)
+},"1")
+
+Tone.Transport.schedule(function(time){
+  panning(.5)
+  gASR(.001, .1, .001)
+},"2")
+
+Tone.Transport.schedule(function(time){
+  panning(1)
+  gASR(.001, .1, .001)
+},"3")
+
+// transport must be started
+Tone.Transport.start()
