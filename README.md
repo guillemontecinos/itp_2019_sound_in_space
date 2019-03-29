@@ -36,5 +36,5 @@ Thinking about this I proposed my self to compose this piece in the opposite app
 The second question takes great importance when thinking that general sound systems –Tonejs included– are designed to place a source of sound in a silent space –and not vice versa– what directly affects the technique used to pan the source between L and R channels. In order to approach this problem I designed a stereo panning system that is thought from the paradigm of composing from silence. In this system there is one source of noise `noiseSource` which generates the sonic context in which the composition is listened. That source is split into two gain nodes –`gNoise` and `gSilence`–, the first of them used to actually create the ambient sonic contexts, while the second is used to trigger *silence notes* through the function `gASR()`, which basically is the negation of a note envelope without decay time.
 
 <p align="center">
-  <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/02_stereo_scheme.png" align="middle" width="70%">
+  <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/02_stereo/scheme.png" align="middle" width="70%">
 </p>
