@@ -33,8 +33,16 @@ Regarding John Cage's thoughts about silence I question myself in terms of why t
 
 Thinking about this I proposed my self to compose this piece in the opposite approach: let's think of a context where the default sonic state is noise and the composition process is about placing *sources of silence* in the space. The main question here is how can we move silence in a noisy space? or –in this particular case– how can we pan a source silence in a noisy space regarding a stereophonic system?
 
-The second question takes great importance when thinking that general sound systems –Tonejs included– are designed to place a source of sound in a silent space –and not vice versa– what directly affects the technique used to pan the source between L and R channels. In order to approach this problem I designed a stereo panning system that is thought from the paradigm of composing from silence. In this system there is one source of noise `noiseSource` which generates the sonic context in which the composition is listened. That source is split into two gain nodes –`gNoise` and `gSilence`–, the first of them used to actually create the ambient sonic contexts, while the second is used to trigger *silence notes* through the function `gASR()`, which basically is the negation of a note envelope without decay time.
+The second question takes great importance when thinking that general sound systems –Tonejs included– are designed to place a source of sound in a silent space –and not vice versa– what directly affects the technique used to pan the source between L and R channels. In order to approach this problem I designed a stereo panning system that is thought from the paradigm of composing from silence. In this system there is one source of noise `noiseSource` which generates the sonic context in which the composition is listened.
 
 <p align="center">
   <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/02_stereo/scheme.png" align="middle" width="70%">
+</p>
+
+That source is split into two gain nodes –`gNoise` and `gSilence`–, the first of them used to actually create the ambient sonic contexts, while the second is used to trigger *silence notes* through the function `gASR()`, which basically is the negation of a note envelope without decay time. Then, in order to pan right and left signals coming from noise and silence gain nodes I set four gain nodes that were tuned following equal energy principle, controlled by the functions `panning()` and `rampPanning()`.
+
+The score for the final 1 minute long piece was designed in terms of how a source of silence can be moved in the space (note that the line and dots represent the source) and can be seen below. To listen the final piece please execute the code under `./02_stereo/tone_sketches/stereo6.js`.
+
+<p align="center">
+  <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/02_stereo/stereo_score.jpg" align="middle" width="70%">
 </p>
