@@ -63,7 +63,7 @@ function gASR(attack, sustain, release){
   gSilence.gain.linearRampToValueAtTime(1, "+" + t3)
 }
 
-// panning
+// panning. panX = 0 -> L; panX = 1 -> R
 function panning(panX){
   gSilenceL.gain.value = Math.sqrt(1 - panX)/2
   gNoiseL.gain.value = Math.sqrt(panX)/2
@@ -74,7 +74,7 @@ function panning(panX){
 // notes scheduling
 Tone.Transport.schedule(function(time){
   panning(0)
-  gASR(.001, .1, .001)
+  gASR(.001, .8, .001)
 },"1")
 
 Tone.Transport.schedule(function(time){
