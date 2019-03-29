@@ -29,3 +29,12 @@ Besides of playing just pure tones I played around with phase shifting and harmo
 Tone was totally new for me, so I had to start from scratch. In order to make this as minimal as possible I decided to play around with mono and poly synths triggered from sequencers. The final version of the piece consists in 3 synths, one for low freqs, one for mid freqs and one for highg freqs. These notes are part of a scale I built from the resonant frequencies I found during the tuning process, which were copied one octave up in order to add more variety of sounds. The final version can be listened [here](https://soundcloud.com/guillemontecinos/sound-in-space-monophonic).
 
 ## Stereophonic
+Regarding John Cage's thoughts about silence I question myself in terms of why the understanding we have of composing music is about placing a sound source –whatever it is– in a context where the default state is silence (ideally absolute silence). In certain way, we compose in order to break –or disturb– the silence but not to produce silence.
+
+Thinking about this I proposed my self to compose this piece in the opposite approach: let's think of a context where the default sonic state is noise and the composition process is about placing *sources of silence* in the space. The main question here is how can we move silence in a noisy space? or –in this particular case– how can we pan a source silence in a noisy space regarding a stereophonic system?
+
+The second question takes great importance when thinking that general sound systems –Tonejs included– are designed to place a source of sound in a silent space –and not vice versa– what directly affects the technique used to pan the source between L and R channels. In order to approach this problem I designed a stereo panning system that is thought from the paradigm of composing from silence. In this system there is one source of noise `noiseSource` which generates the sonic context in which the composition is listened. That source is split into two gain nodes –`gNoise` and `gSilence`–, the first of them used to actually create the ambient sonic contexts, while the second is used to trigger *silence notes* through the function `gASR()`, which basically is the negation of a note envelope without decay time.
+
+<p align="center">
+  <img src="https://github.com/guillemontecinos/itp_spring_2019_sound_in_space/blob/master/02_stereo_scheme.png" align="middle" width="70%">
+</p>
