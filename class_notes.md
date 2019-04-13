@@ -48,4 +48,10 @@
 ### Stereo Assignment
 * think music in a different level of abstraction
 * Write a score that explicits trajectories in space
-*
+
+## Week 5
+* <5'
+* no time for setup
+* since 3pm
+* ethernet dongle
+* [apogee dante](https://www.audinate.com/products/software/dante-virtual-soundcard)
